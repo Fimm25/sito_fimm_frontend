@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import "./letturisti.scss"; // Assicurati che i tuoi stili siano in questo file
+import "./Letturisti.scss"; // Assicurati che i tuoi stili siano in questo file
 import defaultPhoto from '../../assets/images/user.png';
-
 const { VITE_BACKEND_URL } = import.meta.env;
 
 const Letturisti = () => {
