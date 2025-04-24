@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+/* Importa Poppins Extra Bold */
+
+.new-badge {
+    position: absolute;
+    top: -15px;
+    /* Posiziona l'etichetta in alto */
+    right: -25px;
+    /* Posiziona l'etichetta a destra */
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 5px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.contenitore {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Allinea gli elementi ai lati del contenitore */
+    width: 300px;
+    /* Imposta la larghezza del contenitore a 300px */
+    margin: 0 auto;
+    /* Centra il contenitore orizzontalmente nella pagina */
+    position: relative;
+    /* Necessario per il posizionamento assoluto dell'immagine */
+}
+
+.center {
+    display: flex;
+    flex-grow: 1;
+    /* Permette al div centrale di occupare tutto lo spazio necessario */
+    min-width: 0;
+    /* Permette di evitare overflow */
+    background-color: #EEEDEB;
+    border-radius: 50px;
+    padding: 0 10px;
+    /* Aggiunto padding a sinistra e a destra */
+}
+
+.center>div {
+    flex: 1;
+    /* Occupa tutto lo spazio disponibile */
+    height: 36px;
+    /* Altezza fissa di 36px */
+    border-radius: 50px;
+    /* Bordi arrotondati */
+    display: flex;
+    /* Abilita flexbox per centrare verticalmente il testo */
+    align-items: center;
+    /* Allinea verticalmente al centro */
+    text-align: center;
+    /* Centra il testo all'interno dei div */
+}
+
+.center>div:first-child {
+    background-color: #EEEDEB;
+    /* Sfondo per "Sei un letturista?!" */
+    white-space: nowrap;
+    /* Impedisce al testo di andare a capo */
+    padding-left: 5px;
+    padding-right: 5px;
+    /* Padding interno a sinistra */
+}
+
+
+/* Stile per il pulsante "CONTROLIAMO" */
+.control-button {
+    background-color: #117554;
+    /* Colore di sfondo */
+    color: white;
+    /* Colore del testo */
+    border: none;
+    /* Rimuove il bordo predefinito */
+    border-radius: 50px;
+    /* Bordi arrotondati */
+    height: 36px;
+    /* Altezza fissa di 36px */
+    padding: 0 10px;
+    /* Spaziatura orizzontale */
+    display: flex;
+    /* Permette l'uso di flexbox per allineare il testo */
+    align-items: center;
+    /* Allinea verticalmente al centro */
+    justify-content: center;
+    /* Centra orizzontalmente il testo */
+    cursor: pointer;
+    /* Cambia il cursore quando si passa sopra */
+    font-family: 'Poppins', sans-serif;
+    /* Applica il font Poppins */
+    font-weight: 800;
+    /* Imposta il peso del font su Extra Bold */
+}
+
+/* Per evitare che il pulsante assuma stili di default del browser */
+.control-button:focus {
+    outline: none;
+    /* Rimuove il contorno al focus */
+}
+
+/* Puoi aggiungere anche stili per hover o active se desideri */
+.control-button:hover {
+    background-color: #6EC207;
+}
+

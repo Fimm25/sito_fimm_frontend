@@ -1,0 +1,54 @@
+.edit-job {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    max-width: 600px; /* Limita la larghezza del modulo */
+    margin: 0 auto; /* Centra il modulo orizzontalmente */
+  
+    h1 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 20px;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px; /* Spazio tra i campi del modulo */
+    }
+  
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  
+    input,
+    textarea {
+      width: 100%; /* Modifica questa proprietà se vuoi che il campo occupi meno spazio */
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+  
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+  
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+  

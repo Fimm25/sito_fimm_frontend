@@ -1,0 +1,27 @@
+/* Slider.scss */
+
+.slider_solution {
+    position: relative;
+    width: 100%; /* Imposta la larghezza dello slider */
+    margin: 0 auto; /* Centra lo slider orizzontalmente */
+    overflow: hidden;
+    background-color: black;
+    padding-top: 2%;
+  
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        transition: transform 0.5s ease-in-out;
+    }
+  
+    &__image {
+        width: 100%;
+        height: auto;
+        max-height: 340px; /* Imposta un'altezza massima uniforme */
+        object-fit: contain; /* Mantiene le proporzioni delle immagini SVG */
+        border-radius: 10px; /* Opzionale: aggiunge bordi arrotondati */
+    }
+}

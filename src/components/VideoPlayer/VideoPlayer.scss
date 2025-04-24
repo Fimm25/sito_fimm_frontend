@@ -1,0 +1,53 @@
+.video-player {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Dimensione massima del video */
+    margin: 0 auto; /* Centra il video */
+  
+    .video-thumbnail {
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+  
+      img {
+        display: block;
+        border-radius: 25px;
+        width: 100%;
+        filter: brightness(50%); /* Immagine scura */
+        transition: filter 0.3s ease; /* Transizione per effetto hover */
+      }
+  
+      &:hover img {
+        filter: brightness(100%); /* Immagine più chiara al passaggio del mouse */
+      }
+  
+      &__overlay {
+        position: absolute;
+        border-radius: 25px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.5); /* Sovrapposizione scura semi-trasparente */
+      }
+  
+      &__play-button {
+        background-color: #fff;
+        border: none;
+        color: #000;
+        padding: 10px 20px;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #ddd; /* Cambia colore al passaggio del mouse */
+        }
+      }
+    }
+  }
+  

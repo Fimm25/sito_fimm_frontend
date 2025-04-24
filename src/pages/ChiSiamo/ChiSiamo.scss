@@ -1,0 +1,224 @@
+.section-wrapper {
+    font-family: "Poppins";
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .first-section {
+    margin-top: 80px; 
+  }
+  
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .video-container {
+    width: 100%; /* Adatta il video al 100% della larghezza del contenitore */
+    max-width: 100%; /* Limita la larghezza massima */
+    height: auto; /* Mantieni il rapporto di aspetto */
+    object-fit: cover; /* Rende il video adattabile al contenitore */
+    border-radius: 10px; /* Aggiungi angoli arrotondati se desiderato */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aggiungi un'ombra per l'effetto visivo */
+  }
+  
+  
+  .reverse-layout {
+    flex-direction: row-reverse;
+  }
+  
+  .normal-layout {
+    flex-direction: row;
+  }
+
+  .text hr {
+    margin: 0 auto;
+    border: 2px solid #FF8801;
+    text-align: left;
+  }
+  
+  .image-container {
+    flex: 1;
+    max-width: 50%;
+  }
+  
+  .image-container img {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .text {
+    text-align: left;
+    flex: 1;
+    max-width: 40%;
+  }
+  
+  .divider {
+    max-width: 1200px;
+    margin: 40px auto;
+  }
+  
+  .divider h2 {
+    font-family: "Poppins";
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #FF8801;
+    text-align: center;
+  }
+  
+  .divider hr {
+    margin: 0 auto;
+    border: 2px solid #FF8801;
+    width: 80%;
+  }
+
+  .image_presentazione {
+    height: auto;
+    width: 800px;
+  }
+
+
+  .plus {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 20px 0;
+  }
+  .highlight {
+    color: #FF8801;
+    font-weight: bold;
+  }
+  
+  .logo-small {
+    display: block;
+    margin-bottom: 2px;
+    max-width: 100px; /* Regola la larghezza massima del logo */
+    height: auto; /* Mantiene le proporzioni */
+  }
+  
+  /* Certificazioni  */
+
+  .timeline {
+    font-family: "Poppins";
+  }
+
+  
+ .certified-section {
+    font-family: "Poppins";
+    padding: 2rem;
+  
+    .centered-text {
+      text-align: center;
+      margin-bottom: 2rem;
+  
+      h3 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #333;
+      }
+    }
+  
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        align-items: center;
+        justify-items: center; 
+        margin: 0 auto; 
+        max-width: 1200px;
+  
+    .grid-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+  
+      img {
+        width: 20%; /* Imposta una larghezza fissa */
+        height: auto; /* Mantieni le proporzioni */
+        object-fit: contain; /* Garantisce che l'immagine non venga deformata */
+        max-width: 100%; /* Assicura che non superi le dimensioni del contenitore */
+      }
+  
+      .text-content {
+        h5 {
+          font-size: 1.2rem;
+          margin: 0;
+          color: #555;
+        }
+  
+        p {
+          font-size: 0.9rem;
+          color: #777;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+ }
+
+ @media (max-width: 1199px) and (min-width: 768px) {
+  .image_presentazione {
+    width: 100%;
+} 
+
+}
+
+/* Laptop piccoli (MacBook Pro 13", portatili aziendali, ecc.) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .image_presentazione {
+    height: auto;
+    width: 600px;
+}
+}
+
+/* Laptop medi (MacBook Pro 14", desktop HD) */
+@media (min-width: 1201px) and (max-width: 1440px) {
+  .image_presentazione {
+    height: auto;
+    width: 600px;
+}
+}
+
+/* Desktop grandi */
+@media (min-width: 1441px) and (max-width: 1560px) {
+
+}
+
+
+
+ @media only screen and (max-width: 768px) {
+.image_presentazione {
+  width: 100%;
+}
+  .text {
+    max-width: 100%;
+  }
+  .normal-layout {
+    flex-direction: column;
+}
+  .reverse-layout {
+    flex-direction: column;
+}
+.image-container {
+  max-width: 100%;
+}
+
+.normal-layout {
+    flex-direction: column;
+}
+.certified-section .grid-container {
+ display: flex;
+ flex-direction: column;
+}
+ }
+
+
+
+ 

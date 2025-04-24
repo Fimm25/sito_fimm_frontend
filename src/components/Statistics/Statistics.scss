@@ -1,0 +1,79 @@
+.statistic-section {
+  font-family: 'Maven Pro', sans-serif;
+  position: relative;
+  background: #0F2027;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #2C5364, #203A43, #0F2027);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #2C5364, #203A43, #0F2027);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;
+  padding: 0px 0;
+  color: white;
+  text-align: center;
+
+  .container_2 {
+    max-width: 1200px; // Imposta un massimo per la larghezza del contenitore
+    margin: 0 auto; // Centra il contenitore orizzontalmente
+  }
+
+  .statistic-wrapper {
+    display: flex;
+    flex-wrap: wrap; // Permette ai blocchi di adattarsi
+    gap: 20px; // Maggiore spazio tra i blocchi
+    justify-content: center; // Centra i blocchi orizzontalmente
+
+    .row {
+      display: flex;
+      justify-content: center; // Centra i blocchi all'interno della riga
+      gap: 30px; // Maggiore spazio tra i blocchi
+      flex-wrap: wrap;
+    }
+
+    @media screen and (max-width: 768px) {
+      .statistic-block {
+        flex: 1 1 100%; // I blocchi si adattano al 100% della larghezza disponibile
+        margin: 10px 0; // Riduci il margine per uno spazio più contenuto
+        padding: 15px; // Riduci il padding per migliorare la visualizzazione
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .statistic-block {
+        flex: 1 1 100%; // I blocchi occupano tutta la larghezza disponibile su schermi più piccoli
+      }
+    }
+  }
+
+  .statistic-block {
+    flex: 1 1 300px; // Blocchi che occupano almeno 300px di larghezza
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    max-width: 100%; // Evita che i blocchi superino la larghezza disponibile
+
+    &:hover {
+      transform: translateY(-10px); // Effetto hover per far sollevare il blocco
+    }
+
+    .statistic-ico {
+      font-size: 65px;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .statistic-number {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .statistic-text {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+}

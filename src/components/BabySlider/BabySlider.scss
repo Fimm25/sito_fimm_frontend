@@ -1,0 +1,68 @@
+.baby-slider {
+    width: 800px; /* Dimensione compatta */
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto; /* Centra lo slider */
+    
+    .slider-wrapper {
+      gap: 4rem;
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      animation: slide 10s infinite linear; /* Scorrimento automatico */
+    }
+  
+    .slider-item {
+      width: 225px; /* Stesso della dimensione del contenitore */
+      height: 400px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+  
+      img {
+        width: 84%; /* Riduzione dimensione immagine */
+        height: 87%;
+        object-fit: cover; /* Evita distorsioni */
+        border-radius: 12px; /* Aggiunto un bordo arrotondato per migliorare il design */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aggiunto un'ombra per definire le immagini */
+      }
+    }
+  }
+  
+  /* Animazione per scorrimento continuo */
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+    
+  }
+  
+
+  @media (min-width: 1201px) and (max-width: 1440px) {
+    .baby-slider{
+      width: 100%;
+    }
+  }
+  
+@media (max-width: 1199px) and (min-width: 768px) {
+  
+  .baby-slider {
+    width: 100%;
+}      
+
+}
+  
+      @media only screen and (max-width: 768px) {
+        .baby-slider {
+          width: 111%;
+          height: 514px;
+          overflow: hidden;
+          position: relative;
+          margin: 0 auto;
+      }      
+      }

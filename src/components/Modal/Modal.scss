@@ -1,0 +1,97 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    
+    &--active {
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    &__content {
+      background: #ddfaff;
+      border-radius: 8px;
+      padding: 20px;
+      width: 90%; /* Aumentato da 80% a 90% */
+      max-width: 750px; /* Aumentato da 700px a 800px */
+      height: auto;
+      text-align: center;
+      transform: translateY(20px) scale(0.8); /* Cambiato da solo scale a translateY e scale */
+      opacity: 0;
+      transition: transform 0.5s ease, opacity 0.5s ease; /* Aumentato il tempo della transizione */
+  
+      &--active {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+  
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+  
+      & .modal__close {
+        font-size: 24px;
+        cursor: pointer;
+      }
+    }
+
+    &__title {
+        font-size: 1.5rem; /* Definisci la dimensione del carattere */
+        color: black; /* Imposta il colore del testo */
+        font-weight: bold; /* Aggiungi eventualmente il peso del carattere */
+        text-align: center; /* Centra il testo del titolo */
+        flex: 1; /* Permette al titolo di occupare tutto lo spazio disponibile */
+      }
+  
+    &__body {
+      margin-bottom: 20px;
+  
+      img {
+        max-width: 80%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+  
+      /* Selettori più specifici per garantire che il colore venga applicato */
+      h2, p {
+        color: black !important;
+      }
+
+      p {
+        padding-left: 20px; /* Aggiungi spazio a sinistra per l'indentazione */
+        text-align: left; /* Allinea il testo a sinistra per l'indentazione */
+      }
+    }
+  
+    &__footer {
+      display: flex;
+      justify-content: center;
+      
+      .modal__button {
+        padding: 10px 20px;
+        background-color: #0072F0;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #005bb5;
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+
+.carica-letturista-container {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 60px);
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+}
+
+.carica-letturista-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px; /* Aumento della larghezza massima del form */
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px; /* Maggiore padding per un aspetto più spazioso */
+}
+
+.carica-letturista-form label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.carica-letturista-form input[type="text"],
+.carica-letturista-form input[type="file"] {
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 12px; /* Aumento del padding per i campi input */
+    margin-bottom: 20px; /* Spazio maggiore tra i campi */
+    font-size: 1rem;
+}
+
+.carica-letturista-form input[type="text"]:focus,
+.carica-letturista-form input[type="file"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.image-preview {
+    margin: 10px 0;
+}
+
+.preview-image {
+    width: 100%; /* Occupa tutta la larghezza del contenitore */
+    max-width: 150px; /* Larghezza massima per l'anteprima */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.submit_letturisti {
+    padding: 12px;
+    border-radius: 10px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit_letturisti:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.submit_letturisti:active {
+    transform: translateY(0);
+}
+
+.feedback-message {
+    margin: 10px 0;
+    color: #4CAF50;
+    text-align: center;
+}

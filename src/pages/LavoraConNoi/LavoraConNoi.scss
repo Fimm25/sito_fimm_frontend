@@ -1,0 +1,168 @@
+/* Generali */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenitore principale */
+.lavora-con-noi {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centrare il contenuto */
+}
+
+/* Titolo principale */
+.lavora-con-noi h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Lista delle offerte */
+.lavora-con-noi ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Spaziatura tra le card */
+    justify-content: center;
+    margin: 0;
+}
+
+/* Card offerta */
+.lavora-con-noi li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Nasconde le parti che escono dalla card */
+    width: 250px; /* Larghezza fissa per le card */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.lavora-con-noi li:hover {
+    transform: scale(1.05); /* Effetto hover per enfatizzare */
+}
+
+/* Immagine nella card */
+.lavora-con-noi li img {
+    width: 100%;
+    height: 150px; /* Altezza fissa per l'immagine */
+    object-fit: cover; /* Mantiene l'aspect ratio e taglia l'immagine se necessario */
+}
+
+/* Titolo nella card */
+.lavora-con-noi li h2 {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 10px 0;
+}
+.lavora-con-noi li a {
+    text-decoration: none;
+}
+
+
+
+/* Pulsante nella card */
+.lavora-con-noi li button {
+    background-color: #ff4d4d;
+    color: #fff; /* Colore del testo del bottone */
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px; /* Posiziona il bottone in basso */
+    left: 50%;
+    transform: translateX(-50%); /* Centra il bottone */
+    transition: background-color 0.3s ease;
+}
+
+.lavora-con-noi li button:hover {
+    background-color: #ff6666;
+}
+
+/* Contenitore del modulo */
+.form-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Titolo del modulo */
+.form-container h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Input del modulo */
+.form-container input[type="text"],
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Pulsante del modulo */
+.form-container button {
+    background-color: #007bff;
+    color: #fff; /* Colore del testo del bottone */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+.add-job-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block; /* Fa in modo che il bottone prenda tutto lo spazio disponibile */
+    margin: 20px auto; /* Centra il bottone orizzontalmente */
+    text-align: center; /* Assicura che il testo sia centrato */
+}
+
+.add-job-button:hover {
+    background-color: #0056b3; /* Cambia il colore al passaggio del mouse */
+}
+
+/* Responsività */
+@media (max-width: 768px) {
+    .lavora-con-noi ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .lavora-con-noi li {
+        width: 90%;
+    }
+    .form-container {
+        width: 90%;
+        margin: 0 auto;
+    }
+}

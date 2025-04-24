@@ -1,0 +1,597 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* Disabilita qualsiasi scroll */
+}
+
+.solution_container {
+  padding-top: 80px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding-left: 30%;
+  text-align: left;
+}
+
+.solution_container h2 {
+  background: linear-gradient(97deg, #0096FF, #BB64FF 42%, #F2416B 74%, #EB7500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Rende il testo trasparente per mostrare il gradiente */
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-size: 80px;
+  line-height: 1.05;
+  margin-top: 0px;
+  max-width: 700px;
+}
+
+.solution_container h5 {
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 1.05;
+  margin-bottom: 0px;
+}
+
+.solution_body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: raw;
+}
+
+.solution-trioimg {
+  flex-grow: 1;
+  max-width: 50%;
+}
+
+.solution-trioimg img {
+  height: 100%;
+  transform: translateX(-55%);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.solution-detail {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 50px
+}
+
+.solution-detail p {
+  width: 40%;
+  color: #86868B;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-size: 18px;
+  padding-left: 12px;
+  padding-top: 12px;
+}
+
+.solution-detail span {
+  color: #ffffff;
+}
+
+.solution-detail div {
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+}
+
+
+
+.innerSquare {
+  background: #000000;
+  margin: 5px;
+  border-radius: 30px;
+}
+
+
+
+/* Background della pagina */
+.solution_page {
+  overflow: hidden;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  /* Permette lo scroll per default */
+}
+
+/* Gestione dello scroll quando la card è aperta */
+.solution_page.no-scroll {
+  overflow: hidden;
+  /* Disabilita lo scroll su tutta la pagina quando la card è aperta */
+}
+
+.first-software{
+  margin-top: 30%;
+}
+
+.first-software,
+.second-software,
+.third-software,
+.fourth-software{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+.vantaggi {
+  color: #fff;
+  list-style: none;
+}
+.sw-image {
+    z-index: 100;
+      position: relative;
+  height: 60%;
+  width: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.sw-action {
+  margin-top: 35px;
+  color: #0D3417;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 15px 10px 15px;
+  gap: 20px;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #5DF56C;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1100;
+  position: relative;
+}
+
+.image_card {
+  width: 100%;
+}
+
+.sw-action img {
+  width: 18px;
+  height: auto;
+}
+
+
+/* Overlay semi-trasparente */
+.card-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Sfondo semi-trasparente */
+  z-index: 999;
+  /* Posizionato dietro la card */
+  display: none;
+  /* Inizialmente nascosto */
+}
+
+/* Quando la card è visibile, mostra l'overlay */
+.card-overlay.show {
+  display: block;
+}
+.first-software,
+.second-software,
+.third-software,
+.fourth-software {
+  height: 100vh;
+  overflow: hidden;
+}
+.third-software{
+  padding-bottom: 70px;
+}
+/* Stili per la card */
+.card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Ritorna al centro */
+  opacity: 1;
+  /* Card visibile */
+  width: 97%;
+  height: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: #000000;
+  /* Sfondo completamente nero */
+  border-radius: 20px;
+  overflow: auto;
+  z-index: 1000;
+  /* Assicurati che la card sia sopra l'overlay */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease-out;
+  /* Animazione del movimento */
+}
+
+/* Pulsante di chiusura (X) */
+.card-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: white;
+  /* Colore X bianco */
+  cursor: pointer;
+}
+
+.card-close:hover {
+  color: red;
+}
+
+.description {
+  text-wrap: balance;
+  color: #86868b;
+  line-height: 1.5;
+}
+
+.evidenziato {
+  color: white;
+}
+
+.evidenziato {
+  color: white;
+}
+
+.evidenziato_giallo {
+  color: #FFCD00;
+}
+
+.evidenziato_blu {
+  color: #0066CC;
+}
+
+.no-scrollbar {
+  overflow: auto;
+  /* Permette lo scroll */
+  scrollbar-width: none;
+  /* Firefox: nasconde la scrollbar */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari: nasconde la scrollbar */
+}
+
+.card-content h2{
+  color: white;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.card_detail {
+  width: 80%;
+}
+
+/* Contenuto della card */
+.card-content {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.item1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.card-content div {
+  padding: 20px;
+}
+
+.title_solution {
+  color: white;
+  font-size: 3rem;
+  font-family: 'Poppins';
+  font-weight: 800;
+  z-index: 1100;
+    position: relative;
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+
+  .solution_container {
+    padding-top: 80px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding-left: 0;
+    text-align: left;
+}
+
+.solution_container h5 {
+padding-left: 15%;
+}
+.solution_container h2 {
+  padding-left: 15%;
+  }
+
+  .solution-detail div {
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    padding-left: 13px;
+}
+
+  .solution-detail p {
+    width: 80%;
+    color: #86868B;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 18px;
+    padding-left: 12px;
+    padding-top: 12px;
+}
+
+  .solution_body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+  .solution-trioimg img {
+    height: 68%;
+    transform: translateX(3%);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.solution-detail {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.first-software{
+  margin-top: 0;
+}
+
+.first-software,
+.second-software,
+.third-software,
+.fourth-software{
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.sw-image {
+  z-index: 100;
+    position: relative;
+height: 40%;
+width: auto;
+object-fit: contain;
+border-radius: 10px;
+}
+
+/*Contenuto card prodotti*/
+.card-content {
+ display: inline;
+}
+
+.card_detail {
+  width: 100%;
+}
+}
+
+
+/* Laptop piccoli (MacBook Pro 13", portatili aziendali, ecc.) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+
+}
+
+/* Laptop medi (MacBook Pro 14", desktop HD) */
+@media (min-width: 1201px) and (max-width: 1440px) {
+  .solution_container {
+    padding-top: 80px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding-left: 20%;
+    text-align: left;
+}
+  
+  
+  .solution-trioimg img {
+    height: 92%;
+    transform: translateX(-6%);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.solution_body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.solution-detail {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+}
+
+.solution-detail p {
+  width: 67%;
+  color: #86868B;
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 18px;
+  padding-left: 12px;
+  padding-top: 12px;
+}
+.card-content {
+  display: inline;
+}
+.card_detail {
+  width: 70%;
+}
+}
+
+/* Desktop grandi */
+@media (min-width: 1441px) and (max-width: 1560px) {
+
+}
+
+
+@media (max-width: 767px) {
+  // STILI SMARTPHONE
+  .solution_container {
+    padding-top: 80px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding-left: 0;
+    text-align: left;
+  }
+  .solution_page {
+    overflow: hidden;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10%;
+    text-align: left;
+}
+  .solution_container h5 {
+    padding-left: 15%;
+  }
+
+  .solution_container h2 {
+    padding-left: 15%;
+    font-size: 2rem; // <--- se vuoi adattare anche questo
+  }
+
+  .solution-detail div {
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    padding-left: 13px;
+  }
+
+  .solution-detail p {
+    width: 80%;
+    color: #86868B;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 1rem; // <--- qui è la modifica importante
+    padding-left: 12px;
+    padding-top: 12px;
+  }
+
+  .solution_body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .solution-trioimg img {
+    height: 38%;
+    transform: translateX(3%);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .solution-detail {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: -40%;
+  }
+  
+  
+  .first-software {
+    margin-top: 65%;;
+  }
+
+  .first-software,
+  .second-software,
+  .third-software,
+  .fourth-software {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .sw-image {
+    z-index: 100;
+    position: relative;
+    height: 40%;
+    width: auto;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  .card-content {
+    display: inline;
+  }
+
+  .card_detail {
+    width: 100%;
+  }
+
+}
+@media (max-width: 575px) {
+.first-software{
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+    margin-top: 190%;
+
+}
+
+.sw-image {
+  z-index: 100;
+  position: relative;
+  height: 30%;
+  width: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+}

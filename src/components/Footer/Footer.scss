@@ -1,0 +1,107 @@
+.footer--software {
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  padding: 1.5rem 0.5rem;
+  text-align: center;
+
+  .footer__social {
+    display: flex;
+    gap: 1rem;
+    justify-content: center; /* Centra le icone dei social */
+    margin-top: 1rem; /* Aggiunto spazio sopra le icone */
+
+    a {
+      color: #000000;
+      font-size: 1.25rem; /* Icône più piccole */
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #0072f0; /* Colore di hover */
+      }
+    }
+  }
+
+  .footer__social a {
+      color: #ffffff;
+      font-size: 1.25rem;
+      /* Icône più piccole */
+      transition: color 0.3s ease;
+  
+      &:hover {
+        color: #0072f0;
+        /* Colore di hover */
+      }
+    }
+}
+
+.footer {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  background: #ECE9E6;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #FFFFFF, #ECE9E6);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #FFFFFF, #ECE9E6);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #000000;
+  padding: 1.5rem 0.5rem; /* Ridotto il padding per un footer più sottile */
+  text-align: center;
+
+  .footer__container {
+    max-width: 1000px; /* Ridotto per non occupare tutta la larghezza */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem; /* Ridotto il gap tra gli elementi */
+  }
+
+  .footer__text {
+    p {
+      margin: 0.3rem 0; /* Diminuito il margine tra i paragrafi */
+      font-size: 0.875rem; /* Font più piccolo per il testo */
+    }
+  }
+
+
+  .footer__social {
+    display: flex;
+    gap: 1rem;
+    justify-content: center; /* Centra le icone dei social */
+    margin-top: 1rem; /* Aggiunto spazio sopra le icone */
+
+    a {
+      color: #000000;
+      font-size: 1.25rem; /* Icône più piccole */
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #0072f0; /* Colore di hover */
+      }
+    }
+  }
+
+  // Modifiche per mobile
+  @media (max-width: 768px) {
+    padding: 1rem 0.5rem; /* Riduce ulteriormente il padding per schermi piccoli */
+
+    .footer__container {
+      max-width: 100%; /* Usa tutta la larghezza disponibile */
+      gap: 0.5rem; /* Riduce il gap tra gli elementi */
+    }
+
+    .footer__text {
+      p {
+        font-size: 0.75rem; /* Ancora più piccolo per schermi piccoli */
+      }
+    }
+
+    .footer__social {
+      a {
+        font-size: 1.1rem; /* Icône più piccole sui dispositivi mobili */
+      }
+    }
+  }
+}

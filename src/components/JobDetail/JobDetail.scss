@@ -1,0 +1,94 @@
+.job-detail {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .job-detail h1 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .job-detail img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+  
+  .job-detail section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px; 
+    margin: 20px auto;   
+  }
+  
+  
+  .job-detail p {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  .back-button, .delete-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  .back-button:hover, .delete-button:hover {
+    background-color: #0056b3;
+  }
+  
+
+  .job__buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 4.4rem;
+    justify-content: center;
+}
+
+.job__button {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 600;
+}
+
+.job__button:hover {
+    opacity: 0.9;
+}
+
+.job__button:focus {
+    outline: none;
+}
+
+.job__button--job {
+    background-color: #0072F0 !important; 
+    color: #fff !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.job__button--job:hover {
+    background-color: #005bb5;
+}
+
+.job__button--contact {
+    background-color: #28a745 !important;
+    color: #fff !important;
+}
+
+.job__button--contact:hover {
+    background-color: #218838;
+}
