@@ -8,6 +8,7 @@ import HomeRepairServiceOutlinedIcon from '@mui/icons-material/HomeRepairService
 import LocalPoliceOutlinedIcon from '@mui/icons-material/LocalPoliceOutlined';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import HomeIcon from '@mui/icons-material/Home';
+import WebhookIcon from '@mui/icons-material/Webhook';
 import Paper from '@mui/material/Paper';
 import { useNavigate } from 'react-router-dom';
 import './App.scss';
@@ -33,9 +34,9 @@ export default function FixedBottomNavigation() {
           }}
         >
           <BottomNavigationAction
-            label="Prodotti"
+            label="Home"
             icon={<HomeIcon />}
-            onClick={() => handleNavigation('/Prodotti')}  // Naviga alla Home
+            onClick={() => handleNavigation('/')}  // Naviga alla Home
             sx={{
               fontFamily: 'Maven Pro',  // Applica il font Roboto
               fontWeight: 600,
@@ -55,9 +56,9 @@ export default function FixedBottomNavigation() {
             }}
           />
           <BottomNavigationAction
-            label="Home"
-            icon={<HomeIcon />}
-            onClick={() => handleNavigation('/')}  // Naviga alla Home
+            label="Prodotti"
+            icon={<WebhookIcon />}
+            onClick={() => handleNavigation('/Prodotti')}  // Naviga alla Home
             sx={{
               fontFamily: 'Maven Pro',  // Applica il font Roboto
               fontWeight: 600,
