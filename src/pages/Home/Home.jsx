@@ -12,7 +12,7 @@ import Statistics from '../../components/Statistics/Statistics';
 import robot2 from '../../assets/images/Group32.png'
 import { useInView } from "react-intersection-observer";
 import { useAnimation } from 'framer-motion';
-
+import SpinnerLoading from '../../components/SpinnerLoading/SpinnerLoading'; // componente dello spinner
 
 
 // Immagini e testo per il tablet slideshow
@@ -69,6 +69,18 @@ const [ref_2, inView_2] = useInView({ threshold: 0.2 });
   const handleDatiClick = () => {
     navigate('/DatiContatto');
   };
+
+    const [loading, setLoading] = useState(true); // Spinner del loading
+    useEffect(() => {
+      setTimeout(() => {
+        setLoading(false);
+      });
+    }, []);
+  
+    if (loading) {
+      return <SpinnerLoading />;
+    } 
+
 
 
   return (

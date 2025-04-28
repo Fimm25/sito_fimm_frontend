@@ -16,6 +16,8 @@ import { FiDatabase } from 'react-icons/fi';
 import { MdOutlineSpeed } from 'react-icons/md';
 import BabySlider from '../../components/BabySlider/BabySlider';
 
+import SpinnerLoading from '../../components/SpinnerLoading/SpinnerLoading'; // componente dello spinner
+
 /* import immagini iphone */
 import iphone1 from '../../assets/images/Screenshoot/GetWebMobileScreen/gm1.png'
 import iphone2 from '../../assets/images/Screenshoot/GetWebMobileScreen/gm2.png'
@@ -120,6 +122,18 @@ const Software = () => {
         controls_2.start({ x: 150, opacity: 0 });
         }
   }, [controls_2, inView_4]);
+
+  const [loading, setLoading] = useState(true); // Spinner del loading
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    });
+  }, []);
+
+  if (loading) {
+    return <SpinnerLoading />;
+  } 
+
  
   return (
     <div className={`solution_page ${openedCard !== null ? 'no-scroll' : ''}`}>

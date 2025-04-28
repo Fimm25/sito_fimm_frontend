@@ -1,0 +1,27 @@
+.spinnerLoading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Per far sì che lo spinner sia visibile sempre sopra il contenuto */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Copre tutta la larghezza */
+    height: 100vh; /* Copre tutta l'altezza */
+    background-color: rgba(255, 255, 255, 0.7); /* Sfondo leggermente trasparente per effetto overlay */
+    z-index: 9999; /* Garantisce che lo spinner appaia sopra il contenuto */
+  }
+  
+  .spinner {
+    border: 6px solid #f3f3f3; /* Colore di sfondo dello spinner */
+    border-top: 6px solid #3498db; /* Colore della parte che ruota */
+    border-radius: 50%;
+    width: 80px; /* Aumento delle dimensioni */
+    height: 80px; /* Aumento delle dimensioni */
+    animation: spin 1.5s linear infinite; /* Animazione di rotazione più veloce */
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

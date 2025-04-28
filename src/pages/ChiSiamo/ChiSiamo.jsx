@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"; // Aggiungi useEffect
+import React, { useEffect, useState } from "react"; // Aggiungi useEffect
 import "./ChiSiamo.scss";
 import Sa800 from "../../assets/images/certificazioni/download.png";
 import Iso9001 from "../../assets/images/certificazioni/ISO-9001.png";
@@ -10,9 +10,10 @@ import presentazione from "../../assets/images/f.imm/presentazione.mp4";
 import { IoMdAdd } from "react-icons/io";
 import CustomizedTimeline from "../../components/Timeline/Timeline";
 
-
-
 import { useScroll } from "../../components/Scroll/ScrollContext"; // Importa il contesto
+
+import SpinnerLoading from '../../components/SpinnerLoading/SpinnerLoading'; // componente dello spinner
+
 
 const ChiSiamo = () => {
   const { scrollTo, setScrollTo } = useScroll();
@@ -30,6 +31,19 @@ const ChiSiamo = () => {
   
     handleScroll();
   }, [scrollTo, setScrollTo]);
+
+
+  const [loading, setLoading] = useState(true); // Spinner del loading
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    });
+  }, []);
+
+  if (loading) {
+    return <SpinnerLoading />;
+  }
 
   return (
     <>
