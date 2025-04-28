@@ -5,6 +5,16 @@ import 'leaflet/dist/leaflet.css';
 import { IoIosMail } from 'react-icons/io';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import L from 'leaflet';
+import markerIconPng from 'leaflet/dist/images/marker-icon.png';
+import markerShadowPng from 'leaflet/dist/images/marker-shadow.png';
+ 
+const customIcon = new L.Icon({
+  iconUrl: markerIconPng,
+  shadowUrl: markerShadowPng,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+});
 
 const openInGoogleMaps = (lat, lng) => {
   const url = `https://www.google.com/maps/place/${lat},${lng}`;
@@ -84,7 +94,7 @@ const Contatti = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {Object.entries(contacts).map(([key, contact]) => (
-          <Marker key={key} position={contact.mapCoords}>
+          <Marker key={key} position={contact.mapCoords} icon={customIcon}>
             <Popup>
               <strong>F.IMM S.r.l {countries[key]}</strong><br />
               <strong>Descrizione:</strong> {contact.address}<br />
