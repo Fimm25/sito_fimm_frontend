@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import './LavoraConNoi.scss';
 import { useUser } from '../../context/UserContext'
+import SpinnerLoading from '../../components/SpinnerLoading/SpinnerLoading'; // import dello spinner loading
+import LoadingError from '../../components/SpinnerLoading/LoadingError'; // import dell'errore caricamento
 
 const { VITE_BACKEND_URL } = import.meta.env;
 
@@ -110,8 +112,8 @@ const LavoraConNoi = () => {
 
   return (
     <>
-      {isLoading && <span>Caricamento...</span>}
-      {error && <span>Errore caricamento: {error}</span>}
+      {isLoading && <SpinnerLoading />}
+      {error && <LoadingError message={error} />}
       {!isLoading && !error && (
         <div className="lavora-con-noi">
           <h1>Lavora con noi</h1>
