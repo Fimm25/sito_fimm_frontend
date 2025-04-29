@@ -56,7 +56,7 @@ const ChiSiamo = () => {
               grande azienda
             </h2>
             <p>
-              Fondato nel 1960, il Gruppo Dondi è un insieme di aziende nel settore dell'acuqa, del gas, dell'energia e delle infrastrutture, con diversi progetti realizzati e gestiti in Europa, Africa e Sud America.
+              Fondato nel 1960, il Gruppo Dondi è un insieme di aziende nel settore dell'acqua, del gas, dell'energia e delle infrastrutture, con diversi progetti realizzati e gestiti in Europa, Africa e Sud America.
               Le aziende del gruppo possono agire come General Contractor (progettazione, costruzione, O&M), proponenti di PPP, gestori di servizi pubblici e servizi in genere.
             </p>
           </div>
