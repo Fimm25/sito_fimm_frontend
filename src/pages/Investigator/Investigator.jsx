@@ -45,7 +45,6 @@ const Investigator = () => {
         } catch (error) {
             setIsLoading(false);
             console.error('Errore durante la ricerca del letturista:', error);
-            setError('Errore durante la ricerca del letturista')
             setMessage({ text: "Attenzione, l'operatore non è presente nei nostri sistemi!", type: 'error' });
         }
     };
