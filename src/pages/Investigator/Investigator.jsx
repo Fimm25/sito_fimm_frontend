@@ -36,7 +36,6 @@ const Investigator = () => {
             
             if (!response.ok) {
                 setIsLoading(false);
-                setError('Letturista non trovato');
                 throw new Error('Letturista non trovato');
             }
             
