@@ -18,8 +18,10 @@ const Investigator = () => {
 
     const handleCheck = async () => {
         // Aggiungi la condizione per controllare se la matricola è vuota
-
+        
+        setError(null) // -- resetta l'errore -- 30/04
         setIsLoading(true) // -- inizia il caricamento
+        
 
         if (!matricola.trim()) {
             setIsLoading(false);
