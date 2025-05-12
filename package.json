@@ -31,7 +31,6 @@
     "react-router-dom": "^6.26.1",
     "sass": "^1.87.0",
     "sito-f-imm": "file:",
-    "tailwind-merge": "^2.5.2",
     "three": "^0.137.0"
   },
   "devDependencies": {
