@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import './EditJob.scss'; // Stili specifici per la pagina di modifica
+import SpinnerLoading from '../../components/SpinnerLoading/SpinnerLoading'; // import dello spinner loading
+import LoadingError from '../../components/SpinnerLoading/LoadingError'; // import dell'errore caricamento
 
 const { VITE_BACKEND_URL } = import.meta.env;
 
@@ -73,9 +75,9 @@ const EditJob = () => {
 
   return (
     <>
-      {isLoading && <span>Caricamento...</span>}
-      {error && <span>Errore: {error}</span>}
-      {message && <span>Successo: {message}</span>}
+      {isLoading && <SpinnerLoading />}
+      {error && <LoadingError message={error} />}
+      
       {!isLoading && !error && (
         <div className="edit-job">
           <h1>Modifica Offerta di Lavoro</h1>
