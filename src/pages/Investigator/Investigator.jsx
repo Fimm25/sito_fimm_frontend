@@ -31,6 +31,7 @@ const Investigator = () => {
 
         try {
             // Converti la matricola in maiuscolo
+            setLetturista(null); // reset letturista ad ogni ricerca
             const upperCaseMatricola = matricola.toUpperCase();
             const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/meterReader/${upperCaseMatricola}`);
             
