@@ -9,6 +9,8 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { useUser } from '../../context/UserContext'
 import { motion } from 'framer-motion';
+import SpinnerLoading from '../../components/SpinnerLoading/SpinnerLoading'; // import dello spinner loading
+import LoadingError from '../../components/SpinnerLoading/LoadingError'; // import dell'errore caricamento
 
 import './JobDetail.scss'; // Stili specifici per la pagina di dettaglio
 
@@ -60,8 +62,8 @@ const JobDetail = () => {
 
   return (
     <>
-      {isLoading && <span>Caricamento...</span>}
-      {error && <span>Errore caricamento: {error}</span>}
+      {isLoading && <SpinnerLoading />}
+      {error && <LoadingError message={error} />}
       {job && (
         <div className="job-detail">
           
