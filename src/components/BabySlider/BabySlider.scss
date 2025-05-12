@@ -22,8 +22,8 @@
       overflow: hidden;
   
       img {
+        height: 76%;
         width: 84%; /* Riduzione dimensione immagine */
-        height: 87%;
         object-fit: cover; /* Evita distorsioni */
         border-radius: 12px; /* Aggiunto un bordo arrotondato per migliorare il design */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aggiunto un'ombra per definire le immagini */
