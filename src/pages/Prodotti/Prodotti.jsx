@@ -142,7 +142,7 @@ const Software = () => {
           <h2>Una gestione completa.</h2>
         <div className='solution_body'>
           <div className='solution-trioimg'>
-            <img alt="Immagine Trio" src={solution_image} loading="lazy"/>
+            <img alt="Immagine Trio" src={solution_image}/>
           </div>
           <div className='solution-detail'>
  
@@ -192,7 +192,7 @@ const Software = () => {
       >
       <div className='first-software'>
         <h1 className='title_solution'>Easy 4</h1>
-        <img className="sw-image" src={easy_image} alt="primo software" loading="lazy"/>
+        <img className="sw-image" src={easy_image} alt="primo software"/>
         <motion.div
           className="box"
           whileHover={{ scale: 1.1 }}
@@ -200,7 +200,7 @@ const Software = () => {
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
         <button className='sw-action' onClick={() => openCard(0)}>
-          Scopri di <img src={icon_image} alt="primo software" loading="lazy" />
+          Scopri di <img src={icon_image} alt="primo software" />
         </button>
         </motion.div>
       </div>
@@ -214,7 +214,7 @@ const Software = () => {
       >
       <div className='second-software'>
         <h1 className='title_solution'>GETWeb Mobile</h1>
-        <img className="sw-image" src={mobile_prodotti} alt="primo software" loading="lazy" />
+        <img className="sw-image" src={mobile_prodotti} alt="primo software" />
         <motion.div
           className="box"
           whileHover={{ scale: 1.1 }}
@@ -222,7 +222,7 @@ const Software = () => {
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
         <button className='sw-action' onClick={() => openCard(1)}>
-          Scopri di <img src={icon_image} alt="secondo software" loading="lazy" />
+          Scopri di <img src={icon_image} alt="secondo software" />
         </button>
         </motion.div>
       </div>
@@ -235,7 +235,7 @@ const Software = () => {
       >
       <div className='third-software'>
         <h1 className='title_solution'>GETWeb</h1>
-        <img className="sw-image" src={tablet_prodotti} alt="primo software" loading="lazy" />
+        <img className="sw-image" src={tablet_prodotti} alt="primo software" />
          <motion.div
           className="box"
           whileHover={{ scale: 1.1 }}
@@ -243,7 +243,7 @@ const Software = () => {
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
         <button className='sw-action' onClick={() => openCard(2)}>
-          Scopri di <img src={icon_image} alt="terzo software" loading="lazy" />
+          Scopri di <img src={icon_image} alt="terzo software" />
         </button>
         </motion.div>
       </div>
@@ -254,7 +254,7 @@ const Software = () => {
       {/* La card che si apre */}
       {openedCard === 0 && (
         <div className="card no-scrollbar">
-          <button className="card-close" onClick={closeCard}><img src={cross} loading="lazy"/></button>
+          <button className="card-close" onClick={closeCard}><img src={cross}/></button>
           <div className="card-content">
             <div>
               <h2>Easy4</h2>
@@ -290,7 +290,7 @@ const Software = () => {
  
       {openedCard === 1 && (
         <div className="card">
-          <button className="card-close" onClick={closeCard}><img src={cross} loading="lazy"/></button>
+          <button className="card-close" onClick={closeCard}><img src={cross} /></button>
           <div className="card-content">
             <div>
               <h2>GETWebMobile: Gestione Avanzata Utenze</h2>
@@ -329,7 +329,7 @@ const Software = () => {
  
       {openedCard === 2 && (
         <div className="card">
-          <button className="card-close" onClick={closeCard}><img src={cross} loading="lazy"/></button>
+          <button className="card-close" onClick={closeCard}><img src={cross}/></button>
           <div className="card-content">
             <div className='text_card'>
               <h2>GETWeb</h2>
@@ -347,7 +347,7 @@ const Software = () => {
               </ul>
             </div>
             <div>
-              <img src={card_image} alt='Card' className='card_detail' loading="lazy"/>
+              <img src={card_image} alt='Card' className='card_detail' />
             </div>       
             <div>
               <h2>Dettagli</h2>

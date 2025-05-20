@@ -96,7 +96,6 @@ const Servizi = () => {
               <img
                 alt="card_image"
                 className="image"
-                loading="lazy"
                 src={cardContents[activeCard].image}
               />
             )}
