@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"; // Aggiungi useEffect
+import { useEffect, useState, useRef } from "react"; // Aggiungi useEffect
 import "./ChiSiamo.scss";
 import Sa800 from "../../assets/images/certificazioni/download.png";
 import Iso9001 from "../../assets/images/certificazioni/ISO-9001.png";
@@ -33,6 +33,32 @@ const ChiSiamo = () => {
     handleScroll();
   }, [scrollTo, setScrollTo]);
 
+  // ADD
+  function AutoPlayOnView({ src, poster, className }) {
+  const videoRef = useRef();
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && videoRef.current) {
+          videoRef.current.play();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
+      }
+    };
+  }, []);
+  // -------------------------------------------------------------
+
 
   const [loading, setLoading] = useState(true); // Spinner del loading
 
@@ -64,12 +90,13 @@ const ChiSiamo = () => {
           <div className="image-container">
           <video
             src={videoReal}
-            autoPlay
+            // autoPlay
             loop
             muted
             className="video-container"
             preload="none"
-            cover={fotoReal} // TEST
+            poster={fotoReal} // TEST
+            playsInline
           >
             Il tuo browser non supporta il tag video.
           </video>
