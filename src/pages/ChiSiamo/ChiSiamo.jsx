@@ -5,7 +5,8 @@ import Iso9001 from "../../assets/images/certificazioni/ISO-9001.png";
 import Iso14000 from "../../assets/images/certificazioni/iso-14000.png";
 import Iso45001 from "../../assets/images/certificazioni/46.png";
 import sede_azienda from "../../assets/images/f.imm/sede_fimm.jpg";
-import videoReal from "../../assets/videos/videoRealTagliato.mp4"
+import videoReal from "../../assets/videos/videoRealTagliato.mp4" // video
+import fotoReal from "../../assets/images/cover-img/coverVideoTagliato.png" // cover video
 import presentazione from "../../assets/images/f.imm/presentazione.mp4";
 import { IoMdAdd } from "react-icons/io";
 import CustomizedTimeline from "../../components/Timeline/Timeline";
@@ -68,6 +69,7 @@ const ChiSiamo = () => {
             muted
             className="video-container"
             preload="none"
+            cover={fotoReal} // TEST
           >
             Il tuo browser non supporta il tag video.
           </video>
