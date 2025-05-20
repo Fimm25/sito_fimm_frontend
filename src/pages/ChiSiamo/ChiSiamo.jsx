@@ -67,7 +67,7 @@ const ChiSiamo = () => {
             loop
             muted
             className="video-container"
-            alt="Video Dondi"
+            preload="none"
           >
             Il tuo browser non supporta il tag video.
           </video>
@@ -88,7 +88,7 @@ const ChiSiamo = () => {
             loop
             muted
             className="image_presentazione"
-            alt="Video Dondi"
+            preload="none"
           >Il tuo browser non supporta il tag video.</video>
           </div>
           <div className="text">
@@ -109,7 +109,7 @@ const ChiSiamo = () => {
         </div>
         <div className="content normal-layout">
           <div className="image-container">
-            <img src={sede_azienda} alt="" />
+            <img src={sede_azienda} alt="" loading= "lazy" />
           </div>
           <div className="text">
             <span className="highlight">L'evoluzione di F.IMM</span>
@@ -165,7 +165,7 @@ const ChiSiamo = () => {
             },
           ].map((item, index) => (
             <div className="grid-item" key={index}>
-              <img src={item.img} alt={item.title} />
+              <img src={item.img} alt={item.title} loading="lazy"/>
               <div className="text-content">
                 <h5>{item.title}</h5>
                 <p>{item.description}</p>
