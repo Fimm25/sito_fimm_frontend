@@ -33,32 +33,6 @@ const ChiSiamo = () => {
     handleScroll();
   }, [scrollTo, setScrollTo]);
 
-  // ADD
-  function AutoPlayOnView({ src, poster, className }) {
-  const videoRef = useRef();
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && videoRef.current) {
-          videoRef.current.play();
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
-    }
-
-    return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current);
-      }
-    };
-  }, []);
-  // -------------------------------------------------------------
-
 
   const [loading, setLoading] = useState(true); // Spinner del loading
 
@@ -90,13 +64,12 @@ const ChiSiamo = () => {
           <div className="image-container">
           <video
             src={videoReal}
-            // autoPlay
             loop
             muted
             className="video-container"
             preload="none"
             poster={fotoReal} // TEST
-            playsInline
+            autoPlay
           >
             Il tuo browser non supporta il tag video.
           </video>
