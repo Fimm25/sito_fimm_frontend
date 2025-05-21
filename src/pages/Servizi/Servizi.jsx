@@ -58,7 +58,7 @@ const Servizi = () => {
           </p>
         </div>
         <div className="servizi_img">
-          <img src={servizi_image} alt="Servizi" className='servizi_desiato' loading="lazy"/>
+          <img src={servizi_image} alt="Servizi" className='servizi_desiato' />
         </div>
       </section>
 

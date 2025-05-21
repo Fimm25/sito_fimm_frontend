@@ -113,7 +113,7 @@ const ChiSiamo = () => {
         </div>
         <div className="content normal-layout">
           <div className="image-container">
-            <img src={sede_azienda} alt="" loading= "lazy" />
+            <img src={sede_azienda} alt="" />
           </div>
           <div className="text">
             <span className="highlight">L'evoluzione di F.IMM</span>
@@ -169,7 +169,7 @@ const ChiSiamo = () => {
             },
           ].map((item, index) => (
             <div className="grid-item" key={index}>
-              <img src={item.img} alt={item.title} loading="lazy"/>
+              <img src={item.img} alt={item.title} />
               <div className="text-content">
                 <h5>{item.title}</h5>
                 <p>{item.description}</p>

@@ -129,7 +129,7 @@ const Software = () => {
           <h2>Una gestione completa.</h2>
         <div className='solution_body'>
           <div className='solution-trioimg'>
-            <img alt="Immagine Trio" src={solution_image} loading="lazy"/>
+            <img alt="Immagine Trio" src={solution_image}/>
           </div>
           <div className='solution-detail'>
  
