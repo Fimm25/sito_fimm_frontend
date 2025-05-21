@@ -16,8 +16,6 @@ import { FiDatabase } from 'react-icons/fi';
 import { MdOutlineSpeed } from 'react-icons/md';
 import BabySlider from '../../components/BabySlider/BabySlider';
 
-import SpinnerLoading from '../../components/SpinnerLoading/SpinnerLoading'; // componente dello spinner
-
 /* import immagini iphone */
 import iphone1 from '../../assets/images/Screenshoot/GetWebMobileScreen/gm1.png'
 import iphone2 from '../../assets/images/Screenshoot/GetWebMobileScreen/gm2.png'
@@ -123,17 +121,6 @@ const Software = () => {
         }
   }, [controls_2, inView_4]);
 
-  const [loading, setLoading] = useState(true); // Spinner del loading
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    });
-  }, []);
-
-  if (loading) {
-    return <SpinnerLoading />;
-  } 
-
  
   return (
     <div className={`solution_page ${openedCard !== null ? 'no-scroll' : ''}`}>
@@ -142,7 +129,7 @@ const Software = () => {
           <h2>Una gestione completa.</h2>
         <div className='solution_body'>
           <div className='solution-trioimg'>
-            <img alt="Immagine Trio" src={solution_image}/>
+            <img alt="Immagine Trio" src={solution_image} loading="lazy"/>
           </div>
           <div className='solution-detail'>
  

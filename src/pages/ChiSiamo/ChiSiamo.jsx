@@ -7,6 +7,7 @@ import Iso45001 from "../../assets/images/certificazioni/46.png";
 import sede_azienda from "../../assets/images/f.imm/sede_fimm.jpg";
 import videoReal from "../../assets/videos/videoRealTagliato.mp4" // video
 import fotoReal from "../../assets/images/cover-img/coverVideoTagliato.png" // cover video
+import fotoReal2 from "../../assets/images/cover-img/cover_2.png"  // cover 2 video
 import presentazione from "../../assets/images/f.imm/presentazione.mp4";
 import { IoMdAdd } from "react-icons/io";
 import CustomizedTimeline from "../../components/Timeline/Timeline";
@@ -68,7 +69,7 @@ const ChiSiamo = () => {
             muted
             className="video-container"
             preload="none"
-            poster={fotoReal} // TEST
+            poster={fotoReal}
             autoPlay
           >
             Il tuo browser non supporta il tag video.
@@ -91,6 +92,7 @@ const ChiSiamo = () => {
             muted
             className="image_presentazione"
             preload="none"
+            poster={fotoReal2}
           >Il tuo browser non supporta il tag video.</video>
           </div>
           <div className="text">
