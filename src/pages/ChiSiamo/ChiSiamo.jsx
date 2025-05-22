@@ -69,7 +69,7 @@ const ChiSiamo = () => {
             muted
             className="video-container"
             preload="none"
-            poster={fotoReal}
+            poster={fotoReal}  // fermo immagine per aiutare il caricamento nel mentre
             autoPlay
           >
             Il tuo browser non supporta il tag video.
@@ -92,7 +92,7 @@ const ChiSiamo = () => {
             muted
             className="image_presentazione"
             preload="none"
-            poster={fotoReal2}
+            poster={fotoReal2}  // fermo immagine per aiutare il caricamento nel mentre
           >Il tuo browser non supporta il tag video.</video>
           </div>
           <div className="text">
