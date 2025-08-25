@@ -12,6 +12,8 @@ const Letturisti = () => {
     const [isEditing, setIsEditing] = useState(false);
     const [selectedLetturista, setSelectedLetturista] = useState(null);
     const [newImage, setNewImage] = useState(null);
+    const [imageFile, setImageFile] = useState(null); // <-- AGGIUNTA
+
 
     useEffect(() => {
         const fetchLetturisti = async () => {
@@ -38,47 +40,98 @@ const Letturisti = () => {
         setNewImage(null);
     };
 
-    const handleImageChange = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                setNewImage(reader.result);
-            };
-            reader.readAsDataURL(file);
-        }
+    const handleImageChange = async (e) => { // <-- AGGIUNTA
+        const file = e.target.files?.[0];
+        if (!file) return;
+
+        // Converte in JPEG se necessario (multer accetta solo image/jpeg nel tuo POST;
+        // nel PUT non è imposto, ma restiamo coerenti)
+        const toJpeg = (file) =>
+            new Promise((resolve) => {
+                if (file.type === 'image/jpeg') return resolve(file);
+                const reader = new FileReader();
+                reader.onload = () => {
+                    const img = new Image();
+                    img.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0);
+                        canvas.toBlob(
+                            (blob) => {
+                                resolve(
+                                    new File([blob], file.name.replace(/\.[^/.]+$/, '') + '.jpg', {
+                                        type: 'image/jpeg',
+                                    })
+                                );
+                            },
+                            'image/jpeg',
+                            0.92
+                        );
+                    };
+                    img.src = reader.result;
+                };
+                reader.readAsDataURL(file);
+            });
+
+        const jpegFile = await toJpeg(file);
+        setImageFile(jpegFile);
+
+        // Preview (data URL) per mostrare l’anteprima
+        const r2 = new FileReader();
+        r2.onloadend = () => setNewImage(r2.result);
+        r2.readAsDataURL(jpegFile);
     };
 
-    const handleSaveChanges = async () => {
+
+    const handleSaveChanges = async () => { // <-- AGGIUNTA
         const formData = new FormData();
         formData.append('name', selectedLetturista.name);
         formData.append('surname', selectedLetturista.surname);
-        if (newImage) formData.append('image', newImage.split(',')[1]);
+
+        const matricola = (selectedLetturista.matricola || '').trim().toUpperCase();
+
+        if (imageFile) {
+            formData.append('image', imageFile, imageFile.name); // <-- FILE, non base64
+        }
 
         try {
-            const response = await fetch(`${VITE_BACKEND_URL}/meterReader/${selectedLetturista.matricola}`, {
+            const response = await fetch(`${VITE_BACKEND_URL}/meterReader/${matricola}`, {
                 method: 'PUT',
-                body: formData,
+                body: formData, // non impostare manualmente Content-Type
             });
 
             if (!response.ok) throw new Error('Error updating meter reader');
 
             const updatedLetturista = await response.json();
-            setLetturisti(prev => 
-                prev.map(l => (l.matricola === updatedLetturista.matricola ? updatedLetturista : l))
-            );
 
-            if (!newImage) {
-                updatedLetturista.image = selectedLetturista.image;
-                updatedLetturista.contentType = selectedLetturista.contentType;
-            }
+            // Aggiorna la UI:
+            // - Se hai scelto una nuova immagine, usa la preview (dataURL) per aggiornare subito la tabella
+            // - Altrimenti mantieni quella già presente
+            setLetturisti(prev =>
+                prev.map(l =>
+                    l.matricola === updatedLetturista.matricola
+                        ? {
+                            ...l,
+                            ...updatedLetturista,
+                            image: imageFile
+                                ? (typeof newImage === 'string' ? newImage.split(',')[1] : l.image)
+                                : selectedLetturista.image,
+                            contentType: 'image/jpeg',
+                        }
+                        : l
+                )
+            );
 
             setIsEditing(false);
             setNewImage(null);
+            setImageFile(null);
         } catch (error) {
             console.error('Error updating meter reader:', error);
         }
     };
+
 
     const handleSelectSingle = (matricola) => {
         setSelectedLetturisti(prev => ({
@@ -105,11 +158,11 @@ const Letturisti = () => {
                 alert('Errore durante l\'abilitazione di uno o più letturisti.');
             } else {
                 // Aggiorna lo stato dei letturisti abilitati
-                setLetturisti(prev => 
-                    prev.map(letturista => 
-                        matricoleToEnable.includes(letturista.matricola) 
-                        ? { ...letturista, isActive: true } 
-                        : letturista
+                setLetturisti(prev =>
+                    prev.map(letturista =>
+                        matricoleToEnable.includes(letturista.matricola)
+                            ? { ...letturista, isActive: true }
+                            : letturista
                     )
                 );
                 alert('Letturisti abilitati con successo.');
@@ -223,12 +276,12 @@ const Letturisti = () => {
                                 />
                             </td>
                             <td>
-                                <img 
-                                    src={letturista.image 
-                                        ? `data:${letturista.contentType};base64,${letturista.image}` 
-                                        : defaultPhoto} 
-                                    alt={`${letturista.name} ${letturista.surname}`} 
-                                    className="letturista-image" 
+                                <img
+                                    src={letturista.image
+                                        ? `data:${letturista.contentType};base64,${letturista.image}`
+                                        : defaultPhoto}
+                                    alt={`${letturista.name} ${letturista.surname}`}
+                                    className="letturista-image"
                                 />
                             </td>
                             <td>{letturista.name}</td>
@@ -237,8 +290,8 @@ const Letturisti = () => {
                             <td>{letturista.publishedAt ? new Date(letturista.publishedAt).toISOString().slice(0, 10) : 'Data non disponibile'}</td>
                             <td>
                                 {/* Pallino verde o rosso a seconda di isActive */}
-                                <span 
-                                 className={`status-dot ${letturista.isActive ? 'true' : 'false'}`} 
+                                <span
+                                    className={`status-dot ${letturista.isActive ? 'true' : 'false'}`}
                                 />
                             </td>
                             <td>
@@ -268,13 +321,34 @@ const Letturisti = () => {
                             onChange={(e) => setSelectedLetturista({ ...selectedLetturista, surname: e.target.value })}
                         />
                     </label>
-                    {/*  Commento l'immagine perchè la nuova immagine da problemi
+
+
                     <label>
-                        Immagine:
+                        Foto attuale:
+                        <div>
+                            <img
+                                className="preview-image"
+                                alt="Foto attuale"
+                                src={
+                                    selectedLetturista.image
+                                        ? `data:${selectedLetturista.contentType || 'image/jpeg'};base64,${selectedLetturista.image}`
+                                        : defaultPhoto
+                                }
+                            />
+                        </div>
+                    </label>
+
+                    <label>
+                        Nuova immagine:
                         <input type="file" accept="image/*" onChange={handleImageChange} />
                     </label>
-                    */}
-                    {newImage && <img src={newImage} alt="Anteprima" className="preview-image" />}
+                    
+                    {newImage && (
+                        <>
+                            <div>Anteprima nuova foto:</div>
+                            <img src={newImage} alt="Anteprima" className="preview-image" />
+                        </>
+                    )}
                     <button onClick={handleSaveChanges}>Salva Cambiamenti</button>
                     <button onClick={() => setIsEditing(false)}>Annulla</button>
                 </div>
