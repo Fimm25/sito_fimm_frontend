@@ -30,6 +30,8 @@ export default () => {
   <a href="../../public/SA8000.pdf" target="_blank" rel="noopener noreferrer">
     Politica della Responsabilità Sociale
   </a>
+  <a href="../../public/PoliticaInformazioni.pdf" target="_blank" rel="noopener noreferrer">Politica per la Sicurezza delle Informazioni</a>
+
 </p>
 <p>
   <a href="../../public/Segnalazioni.pdf" target="_blank" rel="noopener noreferrer">
