@@ -24,24 +24,25 @@ export default () => {
           <p>REA n. 90489 | CAPITALE SOCIALE € 484.000,00 INT. VERS. | Cod. Fisc. e Part. I.V.A. n. 00724860291</p>
           <p>© Copyright F.IMM 2023 - Tutti i diritti riservati F.IMM srl</p>
           <p>
-  <a href="../../public/Codice Etico FIMM.pdf" target="_blank" rel="noopener noreferrer">
+  <a href="/codice-etico-fimm.pdf" target="_blank" rel="noopener noreferrer">
     Codice Etico FIMM
   </a> &nbsp;|&nbsp;
-  <a href="../../public/SA8000.pdf" target="_blank" rel="noopener noreferrer">
+  <a href="/sa8000.pdf" target="_blank" rel="noopener noreferrer">
     Politica della Responsabilità Sociale
   </a> &nbsp;|&nbsp;
-  <a href="../../public/PoliticaInformazioni.pdf" target="_blank" rel="noopener noreferrer">
+  <a href="/politica-informazioni.pdf" target="_blank" rel="noopener noreferrer">
     Politica per la Sicurezza delle Informazioni
   </a>
 </p>
 <p>
-  <a href="../../public/Segnalazioni.pdf" target="_blank" rel="noopener noreferrer">
+  <a href="/segnalazioni.pdf" target="_blank" rel="noopener noreferrer">
     Modalità di segnalazione relative alla Responsabilità Sociale
   </a> &nbsp;|&nbsp;
-  <a href="../../public/moduloSA8000.pdf" target="_blank" rel="noopener noreferrer">
+  <a href="/modulo-sa8000.pdf" target="_blank" rel="noopener noreferrer">
     Modulo Segnalazioni
   </a>
 </p>
+
 
         </div>
         <div className="footer__social">
