@@ -27,7 +27,7 @@ export default () => {
   <a href="/codice-etico-fimm.pdf" target="_blank" rel="noopener noreferrer">
     Codice Etico FIMM
   </a> &nbsp;|&nbsp;
-  <a href="/sa8000.pdf" target="_blank" rel="noopener noreferrer">
+  <a href="/politica-sociale.pdf" target="_blank" rel="noopener noreferrer">
     Politica della Responsabilità Sociale
   </a> &nbsp;|&nbsp;
   <a href="/politica-informazioni.pdf" target="_blank" rel="noopener noreferrer">
@@ -35,7 +35,7 @@ export default () => {
   </a>
 </p>
 <p>
-  <a href="/segnalazioni.pdf" target="_blank" rel="noopener noreferrer">
+  <a href="/modulosa8000.pdf" target="_blank" rel="noopener noreferrer">
     Modalità di segnalazione relative alla Responsabilità Sociale
   </a> &nbsp;|&nbsp;
   <a href="/modulo-sa8000.pdf" target="_blank" rel="noopener noreferrer">
