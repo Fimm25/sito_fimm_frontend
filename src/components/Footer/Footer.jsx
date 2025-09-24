@@ -35,7 +35,7 @@ export default () => {
   </a>
 </p>
 <p>
-  <a href="/modulosa8000.pdf" target="_blank" rel="noopener noreferrer">
+  <a href="/segnalazioni.pdf" target="_blank" rel="noopener noreferrer">
     Modalità di segnalazione relative alla Responsabilità Sociale
   </a> &nbsp;|&nbsp;
   <a href="/modulo-sa8000.pdf" target="_blank" rel="noopener noreferrer">
