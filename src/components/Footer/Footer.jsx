@@ -29,11 +29,11 @@ export default () => {
   </a> &nbsp;|&nbsp;
   <a href="../../public/SA8000.pdf" target="_blank" rel="noopener noreferrer">
     Politica della Responsabilità Sociale
+  </a> &nbsp;|&nbsp;
+  <a href="../../public/PoliticaInformazioni.pdf" target="_blank" rel="noopener noreferrer">
+    Politica per la Sicurezza delle Informazioni
   </a>
-  
 </p>
- <p>|</p>
-  <a href="../../public/PoliticaInformazioni.pdf" target="_blank" rel="noopener noreferrer">Politica per la Sicurezza delle Informazioni</a>
 <p>
   <a href="../../public/Segnalazioni.pdf" target="_blank" rel="noopener noreferrer">
     Modalità di segnalazione relative alla Responsabilità Sociale
