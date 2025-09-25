@@ -56,6 +56,8 @@ function App() {
       </Routes>
       <Footer />
       <ScrollToTopButton /> {/* Aggiungi qui il componente */}
+      + {/* Banner cookie: spazio extra su mobile per non coprire la bottom nav */}
++ <CookieNotice bottomOffset={isMobile ? 88 : 16} />
       {isMobile && <FixedBottomNavigation />}
     </>
   );
