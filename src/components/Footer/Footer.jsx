@@ -39,9 +39,13 @@ export default () => {
     Modalità di segnalazione relative alla Responsabilità Sociale
   </a> &nbsp;|&nbsp;
   <a href="/modulo-sa8000.pdf" target="_blank" rel="noopener noreferrer">
-    Modulo Segnalazioni
-  </a>
-</p>
+              Modulo Segnalazioni
+            </a> &nbsp;|&nbsp;
+            {/* Link interno alla Cookie Policy (React Router) */}
+            <Link to="/cookie-policy">
+              Cookie Policy
+            </Link>
+          </p>
 
 
         </div>

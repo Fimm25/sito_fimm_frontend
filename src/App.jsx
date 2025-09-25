@@ -25,6 +25,8 @@ import Letturisti from "./pages/Letturisti/Letturisti";
 import Manuntenzione from "./pages/Manutenzione/Manutenzione";
 import Autolettura from "./pages/Autolettura/Autolettura";
 import DatiContatto from "./pages/DatiContatto/DatiContatto";
+import CookieNotice from "./components/CookieNotice/CookieNotice";
+import CookiePolicy from "./pages/CookiePolicy/CookiePolicy";
 
 function App() {
   const { user } = useUser();
@@ -41,6 +43,7 @@ function App() {
         <Route path="/LavoraConNoi" element={<LavoraConNoi />} />
         <Route path="/Autolettura" element={<Autolettura />} />
         <Route path="/DatiContatto" element={<DatiContatto />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
         <Route path="/offers/:id" element={<JobDetail />} />
         <Route path="/EditJob/:id" element={user ? <EditJob /> : <Navigate to='/login' />} />
         <Route path="/Contatti" element={<Contatti />} />
