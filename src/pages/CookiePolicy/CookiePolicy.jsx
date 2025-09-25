@@ -38,7 +38,7 @@ export default function CookiePolicy() {
 
       <h2>Titolare del trattamento</h2>
       <p>
-        [Nominativo/Ragione sociale], [indirizzo], [email di contatto].
+      nominativo: FIMM S.R.L., indirizzo: Viale delle Industrie, 13, 45100 Rovigo RO, email: fimm@fimm.com.
       </p>
     </div>
   );
