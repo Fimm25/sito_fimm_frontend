@@ -147,25 +147,25 @@ const ChiSiamo = () => {
               title: "SA 8000",
               description:
                 "Lo standard accreditato riconosciuto a livello internazionale che risponde alle esigenze delle organizzazioni che vogliono distinguersi per il loro impegno nello sviluppo sostenibile e in particolare per le tematiche sociali.",
-              img: Sa800,
+            //  img: Sa800,
             },
             {
               title: "ISO 9001",
               description:
                 "Definisce i requisiti minimi che il Sistema di Gestione per la Qualità di un'organizzazione deve dimostrare di soddisfare per garantire il livello di qualità di prodotto e servizio.",
-              img: Iso9001,
+             // img: Iso9001,
             },
             {
               title: "ISO 45001",
               description:
                 "Lo standard internazionale per la salute e sicurezza sul lavoro, progettato per proteggere dipendenti e visitatori da incidenti e malattie legate al lavoro.",
-              img: Iso45001,
+             // img: Iso45001,
             },
             {
               title: "ISO 14000",
               description:
                 "Identifica una serie di norme tecniche relative alla gestione ambientale delle organizzazioni.",
-              img: Iso14000,
+             // img: Iso14000,
             },
           ].map((item, index) => (
             <div className="grid-item" key={index}>
