@@ -169,7 +169,7 @@ const ChiSiamo = () => {
             },
           ].map((item, index) => (
             <div className="grid-item" key={index}>
-              <img src={item.img} alt={item.title} />
+              {/*<img src={item.img} alt={item.title} />*/}
               <div className="text-content">
                 <h5>{item.title}</h5>
                 <p>{item.description}</p>
