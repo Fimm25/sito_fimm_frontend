@@ -139,12 +139,17 @@
       align-items: center;
       gap: 1rem;
   
-      img {
-        width: 20%; /* Imposta una larghezza fissa */
-        height: auto; /* Mantieni le proporzioni */
-        object-fit: contain; /* Garantisce che l'immagine non venga deformata */
-        max-width: 100%; /* Assicura che non superi le dimensioni del contenitore */
+      .pdf-icon {
+        display: inline-block;
+        margin-bottom: 10px;
+        transition: transform 0.2s ease;
       }
+      
+      .pdf-icon:hover {
+        transform: scale(1.1);
+        color: #b71c1c;
+      }
+      
   
       .text-content {
         h5 {
