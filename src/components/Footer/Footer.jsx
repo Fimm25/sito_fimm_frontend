@@ -23,14 +23,14 @@ export default function Footer() {
           <p>© Copyright F.IMM 2023 - Tutti i diritti riservati F.IMM srl</p>
 
           <p>
-            <a href="/codice-etico-fimm.pdf" target="_blank" rel="noopener noreferrer">
-              Codice Etico FIMM
-            </a> &nbsp;|&nbsp;
             <a href="/politica-sociale.pdf" target="_blank" rel="noopener noreferrer">
               Politica della Responsabilità Sociale
             </a> &nbsp;|&nbsp;
             <a href="/politica-informazioni.pdf" target="_blank" rel="noopener noreferrer">
               Politica per la Sicurezza delle Informazioni
+            </a> &nbsp;|&nbsp;
+            <a href="/POL_PG_ss.pdf" target="_blank" rel="noopener noreferrer">
+              Politica per la Parità di Genere
             </a>
           </p>
 
@@ -40,7 +40,13 @@ export default function Footer() {
             </a> &nbsp;|&nbsp;
             <a href="/modulo-sa8000.pdf" target="_blank" rel="noopener noreferrer">
               Modulo Segnalazioni
-            </a> &nbsp;|&nbsp;
+            </a>
+          </p>
+
+          <p>
+            <a href="/codice-etico-fimm.pdf" target="_blank" rel="noopener noreferrer">
+              Codice Etico FIMM
+            </a>&nbsp;|&nbsp;
             {/* Link interno alla Cookie Policy (React Router) */}
             <Link to="/cookie-policy">Cookie Policy</Link>
           </p>
