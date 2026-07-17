@@ -1,20 +1,11 @@
-import {
-    createContext,
-    useContext,
-    useState
-} from 'react';
-
+import { createContext, useState, useContext } from 'react';
 import axios from 'axios';
 
 const { VITE_BACKEND_URL } = import.meta.env;
 
-const UserContext = createContext(undefined);
+const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-    /*
-     * Quando la pagina viene ricaricata, recupera l'utente
-     * precedentemente salvato nel localStorage.
-     */
     const [user, setUser] = useState(() => {
         try {
             const savedUser = localStorage.getItem('user');
@@ -23,26 +14,16 @@ export const UserProvider = ({ children }) => {
                 ? JSON.parse(savedUser)
                 : null;
         } catch (error) {
-            console.error(
-                'Errore durante il recupero dell’utente:',
-                error
-            );
-
+            console.error('Errore durante il recupero utente:', error);
             return null;
         }
-    });
-
-    const [token, setToken] = useState(() => {
-        return localStorage.getItem('token') || null;
     });
 
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
 
     const signUp = async (email, password) => {
-        if (loading) {
-            return;
-        }
+        if (loading) return;
 
         setError(null);
         setLoading(true);
@@ -56,12 +37,17 @@ export const UserProvider = ({ children }) => {
                 }
             );
 
-            return response.data;
-        } catch (error) {
-            console.error(
-                'Errore durante la registrazione:',
-                error.response?.data || error
+            const createdUser = response.data;
+
+            setUser(createdUser);
+            localStorage.setItem(
+                'user',
+                JSON.stringify(createdUser)
             );
+
+            return createdUser;
+        } catch (error) {
+            console.error(error);
 
             setError(
                 error.response?.data?.message ||
@@ -76,9 +62,7 @@ export const UserProvider = ({ children }) => {
     };
 
     const logIn = async (email, password) => {
-        if (loading) {
-            return;
-        }
+        if (loading) return;
 
         setError(null);
         setLoading(true);
@@ -92,60 +76,22 @@ export const UserProvider = ({ children }) => {
                 }
             );
 
-            console.log('Risposta login:', response.data);
+            const loggedUser = response.data;
 
-            /*
-             * Adatta queste due righe alla risposta effettiva
-             * del tuo backend.
-             */
-            const authToken =
-                response.data.token ||
-                response.data.accessToken;
-
-            const authenticatedUser =
-                response.data.user ||
-                response.data.authors ||
-                response.data.author;
-
-            if (!authToken) {
-                throw new Error(
-                    'Il backend non ha restituito un token'
-                );
-            }
-
-            if (!authenticatedUser) {
-                throw new Error(
-                    'Il backend non ha restituito i dati dell’utente'
-                );
-            }
-
-            setUser(authenticatedUser);
-            setToken(authToken);
+            setUser(loggedUser);
 
             localStorage.setItem(
                 'user',
-                JSON.stringify(authenticatedUser)
+                JSON.stringify(loggedUser)
             );
 
-            localStorage.setItem(
-                'token',
-                authToken
-            );
-
-            return {
-                user: authenticatedUser,
-                token: authToken
-            };
+            return loggedUser;
         } catch (error) {
-            console.error(
-                'Errore durante il login:',
-                error.response?.data || error
-            );
+            console.error(error);
 
             setError(
                 error.response?.data?.message ||
                 error.response?.data ||
-                error.message ||
                 'Errore durante il login'
             );
 
@@ -157,22 +103,19 @@ export const UserProvider = ({ children }) => {
 
     const logOut = () => {
         setUser(null);
-        setToken(null);
         setError(null);
 
         localStorage.removeItem('user');
-        localStorage.removeItem('token');
     };
 
     const value = {
         user,
-        token,
         signUp,
         logIn,
         logOut,
         error,
         loading,
-        isAuthenticated: Boolean(token)
+        isAuthenticated: Boolean(user)
     };
 
     return (
@@ -187,7 +130,7 @@ export const useUser = () => {
 
     if (context === undefined) {
         throw new Error(
-            'useUser deve essere utilizzato dentro UserProvider'
+            'useUser deve essere usato dentro UserProvider'
         );
     }
 

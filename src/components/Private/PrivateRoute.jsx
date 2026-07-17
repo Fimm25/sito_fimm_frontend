@@ -1,9 +1,12 @@
 import { Navigate } from 'react-router-dom';
+import { useUser } from '../context/UserContext';
 
-const PrivateRoute = ({ element, ...rest }) => {
-  const token = localStorage.getItem('token'); // Ottieni il token dal localStorage
+const PrivateRoute = ({ element }) => {
+  const { user } = useUser();
 
-  return token ? element : <Navigate to="/login" />;
+  return user
+      ? element
+      : <Navigate to="/login" replace />;
 };
 
 export default PrivateRoute;

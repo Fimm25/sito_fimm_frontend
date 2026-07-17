@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, Link, useNavigate } from 'react-router-dom';
@@ -71,11 +72,11 @@ const JobDetail = () => {
   };
 
   const handleDelete = async () => {
-    const token = localStorage.getItem('token');
-
-    if (!token) {
+    if (!user) {
       setOpen(false);
-      setError('Devi essere autenticato per eliminare un’offerta');
+      setError(
+          'Devi essere autenticato per eliminare un’offerta'
+      );
       return;
     }
 
@@ -84,19 +85,14 @@ const JobDetail = () => {
       setError(null);
 
       await axios.delete(
-          `${VITE_BACKEND_URL}/offers/${id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`
-            }
-          }
+          `${VITE_BACKEND_URL}/offers/${id}`
       );
 
       setOpen(false);
       navigate('/LavoraConNoi');
     } catch (error) {
       console.error(
-          'Errore durante l’eliminazione dell’offerta:',
+          'Errore durante l’eliminazione:',
           error.response?.data || error
       );
 
@@ -104,7 +100,7 @@ const JobDetail = () => {
 
       setError(
           error.response?.data?.message ||
-          'Errore durante l’eliminazione dell’offerta di lavoro'
+          'Errore durante l’eliminazione dell’offerta'
       );
     } finally {
       setIsDeleting(false);
