@@ -1,3 +1,44 @@
+.markdown-help {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  font-size: .9rem;
+  color: #666;
+
+  code {
+    background: #eee;
+    padding: 2px 5px;
+    border-radius: 4px;
+  }
+}
+
+.markdown-preview {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fafafa;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    margin-top: 1.5rem;
+  }
+
+  p,
+  li {
+    line-height: 1.7;
+  }
+
+  ul,
+  ol {
+    padding-left: 2rem;
+  }
+}
+
 .edit-job {
     padding: 20px;
     font-family: Arial, sans-serif;
