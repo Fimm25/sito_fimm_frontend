@@ -1,32 +1,39 @@
 .job-markdown-section {
+  width: 100%;
   margin: 2rem 0;
+  text-align: left;
 
   h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
     color: #222;
+    text-align: left;
   }
 
   h3,
   h4 {
     margin: 1.5rem 0 0.8rem;
     color: #333;
+    text-align: left;
   }
 
   p {
     line-height: 1.8;
     margin-bottom: 1rem;
+    text-align: left;
   }
 
   ul,
   ol {
     margin: 1rem 0;
     padding-left: 2rem;
+    text-align: left;
   }
 
   li {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
     line-height: 1.7;
+    text-align: left;
   }
 
   strong {
@@ -42,6 +49,7 @@
     padding: 1rem;
     border-left: 4px solid #1f6feb;
     background: #f5f7fa;
+    text-align: left;
   }
 
   hr {
@@ -63,6 +71,7 @@
     padding: 1rem;
     border-radius: 8px;
     overflow-x: auto;
+    text-align: left;
   }
 
   a {
@@ -84,12 +93,14 @@
     width: 100%;
     border-collapse: collapse;
     margin: 1rem 0;
+    text-align: left;
   }
 
   th,
   td {
     border: 1px solid #ddd;
-    padding: .8rem;
+    padding: 0.8rem;
+    text-align: left;
   }
 
   th {
@@ -98,32 +109,34 @@
 }
 
 .job-detail {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    text-align: center;
-  }
-  
-  .job-detail h1 {
-    font-size: 2rem;
-    color: #333;
-  }
-  
-  .job-detail img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 20px 0;
-  }
-  
-  .job-detail section {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 800px; 
-    margin: 20px auto;   
-  }
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.job-detail h1 {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+}
+
+.job-detail img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.job-detail section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: left;
+}
   
   
   .job-detail p {
