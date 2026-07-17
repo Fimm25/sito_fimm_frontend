@@ -140,8 +140,6 @@ const JobDetail = () => {
 
           <section className="job-detail__content">
             <div className="job-markdown-section">
-              <h2>Descrizione</h2>
-
               {job.description ? (
                   <ReactMarkdown remarkPlugins={[remarkGfm]}>
                     {job.description}
