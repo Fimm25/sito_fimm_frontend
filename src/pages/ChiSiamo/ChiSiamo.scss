@@ -1,229 +1,658 @@
+/* =========================================================
+   GENERALE
+========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
 .section-wrapper {
-    font-family: "Poppins";
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  html {
-    scroll-behavior: smooth;
-  }
-
-  .first-section {
-    margin-top: 80px; 
-  }
-  
-  .content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-  }
-
-  .video-container {
-    width: 100%; /* Adatta il video al 100% della larghezza del contenitore */
-    max-width: 100%; /* Limita la larghezza massima */
-    height: auto; /* Mantieni il rapporto di aspetto */
-    object-fit: cover; /* Rende il video adattabile al contenitore */
-    border-radius: 10px; /* Aggiungi angoli arrotondati se desiderato */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aggiungi un'ombra per l'effetto visivo */
-  }
-  
-  
-  .reverse-layout {
-    flex-direction: row-reverse;
-  }
-  
-  .normal-layout {
-    flex-direction: row;
-  }
-
-  .text hr {
-    margin: 0 auto;
-    border: 2px solid #FF8801;
-    text-align: left;
-  }
-  
-  .image-container {
-    flex: 1;
-    max-width: 50%;
-  }
-  
-  .image-container img {
-    width: 90%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  .text {
-    text-align: left;
-    flex: 1;
-    max-width: 40%;
-  }
-  
-  .divider {
-    max-width: 1200px;
-    margin: 40px auto;
-  }
-  
-  .divider h2 {
-    font-family: "Poppins";
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #FF8801;
-    text-align: center;
-  }
-  
-  .divider hr {
-    margin: 0 auto;
-    border: 2px solid #FF8801;
-    width: 80%;
-  }
-
-  .image_presentazione {
-    height: auto;
-    width: 800px;
-  }
-
-
-  .plus {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: bold;
-    margin: 20px 0;
-  }
-  .highlight {
-    color: #FF8801;
-    font-weight: bold;
-  }
-  
-  .logo-small {
-    display: block;
-    margin-bottom: 2px;
-    max-width: 100px; /* Regola la larghezza massima del logo */
-    height: auto; /* Mantiene le proporzioni */
-  }
-  
-  /* Certificazioni  */
-
-  .timeline {
-    font-family: "Poppins";
-  }
-
-  
- .certified-section {
-    font-family: "Poppins";
-    padding: 2rem;
-  
-    .centered-text {
-      text-align: center;
-      margin-bottom: 2rem;
-  
-      h3 {
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: #333;
-      }
-    }
-  
-    .grid-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-        align-items: center;
-        justify-items: center; 
-        margin: 0 auto; 
-        max-width: 1200px;
-  
-    .grid-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-  
-      .pdf-icon {
-        display: inline-block;
-        margin-bottom: 10px;
-        transition: transform 0.2s ease;
-      }
-      
-      .pdf-icon:hover {
-        transform: scale(1.1);
-        color: #b71c1c;
-      }
-      
-  
-      .text-content {
-        h5 {
-          font-size: 1.2rem;
-          margin: 0;
-          color: #555;
-        }
-  
-        p {
-          font-size: 0.9rem;
-          color: #777;
-          line-height: 1.5;
-        }
-      }
-    }
-  }
- }
-
- @media (max-width: 1199px) and (min-width: 768px) {
-  .image_presentazione {
-    width: 100%;
-} 
-
+  font-family: "Poppins", sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-/* Laptop piccoli (MacBook Pro 13", portatili aziendali, ecc.) */
-@media (min-width: 1025px) and (max-width: 1200px) {
-  .image_presentazione {
-    height: auto;
-    width: 600px;
-}
-}
-
-/* Laptop medi (MacBook Pro 14", desktop HD) */
-@media (min-width: 1201px) and (max-width: 1440px) {
-  .image_presentazione {
-    height: auto;
-    width: 600px;
-}
-}
-
-/* Desktop grandi */
-@media (min-width: 1441px) and (max-width: 1560px) {
-
+.first-section {
+  margin-top: 80px;
 }
 
 
+/* =========================================================
+   CONTENUTI
+========================================================= */
 
- @media only screen and (max-width: 768px) {
-.image_presentazione {
-  width: 100%;
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
 }
-  .text {
-    max-width: 100%;
-  }
-  .normal-layout {
-    flex-direction: column;
-}
-  .reverse-layout {
-    flex-direction: column;
-}
-.image-container {
-  max-width: 100%;
+
+.reverse-layout {
+  flex-direction: row-reverse;
 }
 
 .normal-layout {
-    flex-direction: column;
+  flex-direction: row;
 }
+
+.text {
+  flex: 1;
+  max-width: 45%;
+  text-align: left;
+}
+
+.text hr {
+  margin: 0 auto;
+  border: 2px solid #ff8801;
+  text-align: left;
+}
+
+.highlight {
+  color: #ff8801;
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   IMMAGINI
+========================================================= */
+
+.image-container {
+  flex: 1;
+  max-width: 50%;
+}
+
+.image-container img {
+  display: block;
+  width: 90%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.video-container {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image_presentazione {
+  display: block;
+  width: 800px;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* =========================================================
+   DIVISORI
+========================================================= */
+
+.divider {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.divider h2 {
+  margin: 0 0 10px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+
+  text-align: center;
+
+  color: #ff8801;
+}
+
+.divider hr {
+  width: 80%;
+  margin: 0 auto;
+
+  border: 0;
+  border-top: 4px solid #ff8801;
+}
+
+
+/* =========================================================
+   PLUS
+========================================================= */
+
+.plus {
+  margin: 20px 0;
+
+  font-size: 3rem;
+  font-weight: bold;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   LOGO GENERICI
+========================================================= */
+
+.logo-small {
+  display: block;
+
+  max-width: 100px;
+  height: auto;
+
+  margin-bottom: 2px;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.timeline {
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================================================
+   CERTIFICAZIONI
+========================================================= */
+
+.certified-section {
+  width: 100%;
+
+  padding: 2rem 30px 5rem;
+
+  font-family: "Poppins", sans-serif;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   GRID CERTIFICAZIONI
+========================================================= */
+
 .certified-section .grid-container {
- display: flex;
- flex-direction: column;
+  display: grid;
+
+  /*
+    6 colonne virtuali:
+    ogni card ne occupa 2.
+
+    Desktop:
+    [ 1 ][ 2 ][ 3 ]
+       [ 4 ][ 5 ]
+  */
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+
+  gap: 35px;
+
+  width: 100%;
+  max-width: 1450px;
+
+  margin: 0 auto;
+
+  align-items: stretch;
 }
- }
 
 
+/* =========================================================
+   CARD
+========================================================= */
 
- 
+.certified-section .grid-item {
+  grid-column: span 2;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  min-width: 0;
+  min-height: 490px;
+
+  padding: 30px 35px 35px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border-radius: 26px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+          0 8px 25px rgba(0, 0, 0, 0.06),
+          0 2px 8px rgba(0, 0, 0, 0.04);
+
+  transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+}
+
+.certified-section .grid-item:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+          0 15px 35px rgba(0, 0, 0, 0.1),
+          0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   CENTRATURA ULTIMA RIGA
+========================================================= */
+
+.certified-section .grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 35px;
+
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+
+  align-items: stretch;
+}
+
+.certified-section .grid-item {
+  grid-column: span 2;
+}
+
+/* Con 7 certificazioni, centra l'ultima */
+.certified-section .grid-item:last-child:nth-child(3n + 1) {
+  grid-column: 3 / span 2;
+}
+
+/* =========================================================
+   CONTENITORE LOGO
+
+   IMPORTANTE:
+   overflow hidden serve perché i tuoi PNG hanno molto
+   spazio bianco intorno al logo.
+========================================================= */
+
+.certification-logo-link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 280px;
+  height: 280px;
+
+  max-width: 100%;
+
+  margin: 0 auto 10px;
+
+  overflow: hidden;
+
+  flex-shrink: 0;
+
+  text-decoration: none;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   LOGO
+
+   scale(2.5) compensa lo spazio bianco presente
+   all'interno dei PNG.
+========================================================= */
+
+.certification-logo {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  transform: scale(2.5);
+
+  transition:
+          transform 0.25s ease,
+          opacity 0.25s ease;
+}
+
+.certification-logo-link:hover .certification-logo {
+  transform: scale(2.6);
+  opacity: 0.95;
+}
+
+
+/* =========================================================
+   TESTO CERTIFICAZIONI
+========================================================= */
+
+.certified-section .text-content {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  width: 100%;
+
+  margin-top: 5px;
+}
+
+.certified-section .text-content h5 {
+  margin: 0 0 12px;
+
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.2;
+
+  color: #444;
+}
+
+.certified-section .text-content p {
+  max-width: 380px;
+
+  margin: 0;
+
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.65;
+
+  color: #777;
+}
+
+
+/* =========================================================
+   LAPTOP / TABLET GRANDI
+========================================================= */
+
+@media (max-width: 1199px) {
+
+  .content {
+    gap: 30px;
+  }
+
+  .image_presentazione {
+    width: 100%;
+  }
+
+  .certified-section .grid-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    max-width: 900px;
+
+    gap: 30px;
+  }
+
+  .certified-section .grid-item {
+    grid-column: auto;
+
+    min-height: 470px;
+  }
+
+  .certified-section .grid-item:nth-child(4),
+  .certified-section .grid-item:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .certification-logo-link {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP PICCOLI
+========================================================= */
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+
+  .image_presentazione {
+    width: 600px;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP MEDI
+========================================================= */
+
+@media (min-width: 1201px) and (max-width: 1440px) {
+
+  .image_presentazione {
+    width: 600px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .certified-section .grid-container {
+    max-width: 1250px;
+  }
+
+  .certification-logo-link {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .section-wrapper {
+    padding: 20px 30px;
+  }
+
+  .content {
+    gap: 25px;
+  }
+
+  .text {
+    max-width: 48%;
+  }
+
+  .certified-section {
+    padding: 2rem 25px 4rem;
+  }
+
+  .certification-logo-link {
+    width: 230px;
+    height: 230px;
+  }
+
+  .certified-section .grid-item {
+    padding: 25px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media only screen and (max-width: 768px) {
+
+  .section-wrapper {
+    padding: 20px;
+  }
+
+  .first-section {
+    margin-top: 40px;
+  }
+
+  /*
+    Tutte le sezioni diventano verticali
+  */
+  .content,
+  .normal-layout,
+  .reverse-layout {
+    flex-direction: column;
+  }
+
+  .content {
+    gap: 25px;
+  }
+
+  .text {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .image-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .image-container img {
+    width: 100%;
+  }
+
+  .video-container {
+    width: 100%;
+  }
+
+  .image_presentazione {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  /* Divider */
+
+  .divider {
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+
+  .divider h2 {
+    font-size: 1.7rem;
+  }
+
+  .divider hr {
+    width: 90%;
+  }
+
+
+  /* Certificazioni */
+
+  .certified-section {
+    padding: 1rem 18px 3rem;
+  }
+
+  .certified-section .grid-container {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    width: 100%;
+    max-width: 500px;
+
+    margin: 0 auto;
+  }
+
+  .certified-section .grid-item,
+  .certified-section .grid-item:nth-child(4),
+  .certified-section .grid-item:nth-child(5) {
+    grid-column: auto;
+
+    width: 100%;
+
+    min-height: auto;
+
+    margin: 0;
+
+    padding: 25px 20px 30px;
+  }
+
+
+  /* Logo mobile */
+
+  .certification-logo-link {
+    width: 240px;
+    height: 240px;
+
+    margin-bottom: 5px;
+  }
+
+  .certification-logo {
+    transform: scale(2.5);
+  }
+
+  .certification-logo-link:hover .certification-logo {
+    transform: scale(2.55);
+  }
+
+
+  /* Testo */
+
+  .certified-section .text-content h5 {
+    margin-bottom: 10px;
+
+    font-size: 1.3rem;
+  }
+
+  .certified-section .text-content p {
+    max-width: 400px;
+
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+
+/* =========================================================
+   MOBILE PICCOLI
+========================================================= */
+
+@media only screen and (max-width: 480px) {
+
+  .section-wrapper {
+    padding: 15px;
+  }
+
+  .certified-section {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .certified-section .grid-item {
+    border-radius: 20px;
+
+    padding: 20px 16px 25px;
+  }
+
+  .certification-logo-link {
+    width: 210px;
+    height: 210px;
+  }
+
+  .certified-section .text-content h5 {
+    font-size: 1.2rem;
+  }
+
+  .certified-section .text-content p {
+    font-size: 0.9rem;
+  }
+}

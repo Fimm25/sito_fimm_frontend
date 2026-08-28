@@ -39,6 +39,42 @@ export default () => {
                         </a>
                     </div>
                     <div className="slide">
+                        <a
+                            href="https://www.gruppocap.it/it"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="https://www.gruppocap.it/content/experience-fragments/groupcap/it/it/site/cap-header/master/_jcr_content/root/responsivegrid/headercontainer/headernavbarcontaine/headerlogocontainer/logo-header-footer2.coreimg.svg/1762185863577/cap-2025-payoff-rgb-blu.svg"
+                                alt="Gruppo CAP"
+                            />
+                        </a>
+                    </div>
+                    <div className="slide">
+                        <a
+                            href="https://www.acquanovaravco.eu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="https://www.acquanovaravco.eu/Content/LOGO1.png"
+                                alt="Acqua Novara.VCO"
+                            />
+                        </a>
+                    </div>
+                    <div className="slide">
+                        <a
+                            href="https://www.abc.napoli.it/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="https://www.abc.napoli.it/images/ABC_LOGO_140ANNI-01_trasp_-_100.png"
+                                alt="ABC Napoli"
+                            />
+                        </a>
+                    </div>
+                    <div className="slide">
                         <a href="https://2iretegas.it/" target="_blank" rel="noopener noreferrer">
                             <img src={dueI} alt="dueI" />
                         </a>

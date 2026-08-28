@@ -1,6 +1,5 @@
-import { useEffect, useState, useRef } from "react"; // Aggiungi useEffect
+import { useEffect, useState } from "react"; // Aggiungi useEffect
 import "./ChiSiamo.scss";
-import { FaFilePdf } from "react-icons/fa";
 import sede_azienda from "../../assets/images/f.imm/sede_fimm.jpg";
 import videoReal from "../../assets/videos/videoRealTagliato.mp4" // video
 import fotoReal from "../../assets/images/cover-img/coverVideoTagliato.png" // cover video
@@ -8,7 +7,13 @@ import fotoReal2 from "../../assets/images/cover-img/cover_2.png"  // cover 2 vi
 import presentazione from "../../assets/images/f.imm/presentazione.mp4";
 import { IoMdAdd } from "react-icons/io";
 import CustomizedTimeline from "../../components/Timeline/Timeline";
-
+import sa8000 from "../../assets/images/iso/Fimm_SA-8000.png";
+import iso27001 from "../../assets/images/iso/Fimm_ISO-27001.png";
+import iso9001 from "../../assets/images/iso/Fimm_ISO-9001.png";
+import iso14001 from "../../assets/images/iso/Fimm_ISO-14001.png";
+import iso45001 from "../../assets/images/iso/Fimm_ISO-45001.png";
+import parita from "../../assets/images/iso/Fimm-Parita.png";
+import soa from "../../assets/images/iso/Fimm-Soa.png";
 import { useScroll } from "../../components/Scroll/ScrollContext"; // Importa il contesto
 
 import SpinnerLoading from '../../components/SpinnerLoading/SpinnerLoading'; // componente dello spinner
@@ -146,49 +151,73 @@ const ChiSiamo = () => {
             {
               title: "SA 8000",
               description:
-                "Lo standard accreditato riconosciuto a livello internazionale che risponde alle esigenze delle organizzazioni che vogliono distinguersi per il loro impegno nello sviluppo sostenibile e in particolare per le tematiche sociali.",
+                  "Lo standard accreditato riconosciuto a livello internazionale che risponde alle esigenze delle organizzazioni che vogliono distinguersi per il loro impegno nello sviluppo sostenibile e in particolare per le tematiche sociali.",
               pdf: "/certification/SA8000.pdf",
+              logo: sa8000,
             },
             {
               title: "ISO 9001",
               description:
-                "Definisce i requisiti minimi che il Sistema di Gestione per la Qualità di un'organizzazione deve dimostrare di soddisfare per garantire il livello di qualità di prodotto e servizio.",
+                  "Definisce i requisiti minimi che il Sistema di Gestione per la Qualità di un'organizzazione deve dimostrare di soddisfare per garantire il livello di qualità di prodotto e servizio.",
               pdf: "/certification/ISO9001.pdf",
+              logo: iso9001,
             },
             {
               title: "ISO 45001",
               description:
-                "Lo standard internazionale per la salute e sicurezza sul lavoro, progettato per proteggere dipendenti e visitatori da incidenti e malattie legate al lavoro.",
+                  "Lo standard internazionale per la salute e sicurezza sul lavoro, progettato per proteggere dipendenti e visitatori da incidenti e malattie legate al lavoro.",
               pdf: "/certification/ISO45001.pdf",
+              logo: iso45001,
             },
             {
               title: "ISO 14001",
               description:
-                "Identifica una serie di norme tecniche relative alla gestione ambientale delle organizzazioni.",
+                  "Identifica una serie di norme tecniche relative alla gestione ambientale delle organizzazioni.",
               pdf: "/certification/ISO14001.pdf",
+              logo: iso14001,
             },
-            {title: "ISO 27001",
-            description:
-              "Attesta la conformità e l'efficacia di un sistema di gestione per la sicurezza delle informazioni, garantendo la protezione di dati e informazioni.",
-            pdf: "/certification/ISO27001.pdf",
+            {
+              title: "ISO 27001",
+              description:
+                  "Attesta la conformità e l'efficacia di un sistema di gestione per la sicurezza delle informazioni, garantendo la protezione di dati e informazioni.",
+              pdf: "/certification/ISO27001.pdf",
+              logo: iso27001,
+            },
+            {
+              title: "UNI/PdR 125:2022",
+              description:
+                  "Certificazione del sistema di gestione per la parità di genere, finalizzata a promuovere equità, inclusione e pari opportunità all'interno dell'organizzazione.",
+              pdf: "/certification/UNI-PDR-125-2022.pdf",
+              logo: parita,
+            },
+            {
+              title: "SOA OG6",
+              description:
+                  "Attestazione di qualificazione per l'esecuzione di lavori pubblici nella categoria OG6, relativa ad acquedotti, gasdotti, oleodotti, opere di irrigazione e di evacuazione.",
+              pdf: "/certification/SOA-OG6.pdf",
+              logo: soa,
             },
           ].map((item, index) => (
-            <div className="grid-item" key={index}>
-              <a
-                href={item.pdf}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="pdf-icon"
-                title={`Apri certificazione ${item.title}`}
-              >
-                <FaFilePdf size={50} color="#d32f2f" />
-              </a>
+              <div className="grid-item" key={index}>
+                <a
+                    href={item.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="certification-logo-link"
+                    title={`Apri certificazione ${item.title}`}
+                >
+                  <img
+                      src={item.logo}
+                      alt={`Certificazione ${item.title}`}
+                      className="certification-logo"
+                  />
+                </a>
 
-              <div className="text-content">
-                <h5>{item.title}</h5>
-                <p>{item.description}</p>
+                <div className="text-content">
+                  <h5>{item.title}</h5>
+                  <p>{item.description}</p>
+                </div>
               </div>
-            </div>
           ))}
         </div>
       </section>
